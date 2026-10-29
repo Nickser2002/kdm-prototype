@@ -53,7 +53,7 @@ p{margin:0}
 
 /* ── Компоненты в духе shadcn ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:calc(var(--radius) - 2px);border:1px solid transparent;font:600 15px/1 var(--font-sans);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .15s,border-color .15s,box-shadow .15s}
-.btn:focus-visible,.chip:focus-visible,.option:focus-visible,.tab:focus-visible,.switch:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--ring) 40%,transparent)}
+.btn:focus-visible,.chip:focus-visible,.option:focus-visible,.tab:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--ring) 40%,transparent)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn-primary{background:var(--primary);color:var(--primary-foreground)}
 .btn-primary:hover{background:var(--primary-hover)}
@@ -97,44 +97,12 @@ p{margin:0}
 .tab[aria-selected="true"]{background:#fff;color:var(--foreground);box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .progress{height:6px;border-radius:99px;background:var(--muted);overflow:hidden}
 .progress span{display:block;height:100%;width:20%;background:var(--coral);transition:width .25s}
-.switch{display:inline-flex;align-items:center;gap:8px;border:0;background:none;color:inherit;font:600 13px var(--font-sans);cursor:pointer;padding:0}
-.switch i{position:relative;width:34px;height:20px;border-radius:99px;background:#5A5560;transition:background .15s}
-.switch i::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .15s}
-.switch[aria-checked="true"] i{background:var(--coral)}
-.switch[aria-checked="true"] i::after{transform:translateX(14px)}
 
-/* ── Плейсхолдеры и пояснения ── */
+/* ── Плейсхолдеры ── */
 .ph{position:relative;display:flex;align-items:center;justify-content:center;padding:14px;overflow:hidden;text-align:center;border:1px dashed #CFC9C2;border-radius:var(--radius);background:repeating-linear-gradient(135deg,#F7F5F2 0 10px,#EFECE8 10px 20px);color:#8A8590;font:500 12px/1.45 var(--font-mono);letter-spacing:.02em}
 .ph-text{padding:10px 12px;border:1px dashed #CFC9C2;border-radius:calc(var(--radius) - 4px);background:#FBFAF8;color:#8A8590;font-size:14px;line-height:1.5}
-.note{margin-top:32px;padding:16px 18px;border:1px dashed #A9A5D6;border-radius:var(--radius);background:var(--accent);color:var(--accent-foreground);font-size:14px;line-height:1.55}
-.note-label{display:block;margin-bottom:8px;font:600 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75}
-.note ul{margin:6px 0 0;padding-left:18px}
-.note li+li{margin-top:2px}
-.notes-off .note{display:none}
-.note .tz{margin-bottom:6px}
 
-/* ── Отметки «не из ТЗ»: рамка — наша доработка, точки — факт с источником ── */
-:root{--mark:#E0A100}
-[data-why]{outline:2px dashed var(--mark);outline-offset:4px}
-[data-why][data-ok]{outline-style:solid;outline-width:1.5px}
-[data-src]{text-decoration:underline dotted var(--mark);text-decoration-thickness:2px;text-underline-offset:4px;cursor:help}
-.marks-off [data-why]{outline:none}
-.marks-off [data-src]{text-decoration:none;cursor:inherit}
-.why-tip{position:fixed;z-index:1000;max-width:min(320px,calc(100vw - 24px));padding:10px 12px;border-radius:10px;background:#26211F;color:#F4F1EC;font:500 13px/1.45 var(--font-sans);letter-spacing:0;text-transform:none;text-align:left;box-shadow:0 12px 32px rgba(0,0,0,.28);pointer-events:none;opacity:0;transition:opacity .12s}
-.why-tip.show{opacity:1}
-.why-tip b{display:block;margin-bottom:5px;font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mark)}
 
-/* ── Полоса прототипа ── */
-.proto{background:var(--foreground);color:#fff;font-size:13px}
-.proto .container{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-top:10px;padding-bottom:10px}
-.proto b{font-family:var(--font-mono);font-weight:500;letter-spacing:.06em;white-space:nowrap}
-.proto .legend{display:flex;flex-wrap:wrap;gap:12px;color:#CFCBD3}
-.proto .legend span{display:inline-flex;align-items:center;gap:6px}
-.proto .legend i{display:inline-block;width:14px;height:10px;border-radius:3px}
-.proto .spacer{flex:1}
-@media(min-width:1024px){.proto .spacer{display:none}.proto .legend{flex:1 1 0;min-width:0;gap:4px 14px}}
-@media(max-width:1023px){.proto .legend{display:none}}
-@media(max-width:767px){.proto .desc{display:none}.proto .container{flex-wrap:nowrap;gap:12px}}
 @media(max-width:639px){.hero .actions .btn-lg{width:100%}}
 
 /* ── Шапка ── */
@@ -365,23 +333,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
 </head>
 <body>
 
-<!-- Полоса прототипа -->
-<div class="proto">
-  <div class="container">
-    <b>ПРОТОТИП<span class="desc"> · kuhni41.ru · v0.4</span></b>
-    <span class="legend">
-      <span><i style="background:#fff"></i>текст — черновик и правки КДМ 29.10</span>
-      <span><i style="background:repeating-linear-gradient(135deg,#F7F5F2 0 3px,#CFC9C2 3px 5px)"></i>серое — фото и тексты от КДМ</span>
-      <span><i style="border:2px dashed #E0A100"></i>жёлтый пунктир — наша доработка</span>
-      <span><i style="border:1.5px solid #E0A100"></i>сплошная — утвердили 28.10</span>
-      <span><i style="height:3px;border-radius:0;background:repeating-linear-gradient(90deg,#E0A100 0 3px,transparent 3px 6px)"></i>жёлтые точки — факт не из ТЗ</span>
-      <span><i style="background:#ECEBF6"></i>сиреневое — пояснения</span>
-    </span>
-    <span class="spacer"></span>
-    <button class="switch" id="marksSwitch" role="switch" aria-checked="true" title="Жёлтые отметки: что не из ТЗ и почему — при наведении"><i></i>Доработки</button>
-    <button class="switch" id="notesSwitch" role="switch" aria-checked="true"><i></i>Пояснения</button>
-  </div>
-</div>
 
 <!-- Шапка -->
 <header class="header">
@@ -426,25 +377,24 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
   </div>
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow"><span data-src="Текущий kuhni41.ru: салон — ул. Войцешека, 7а; «Изготовление кухонь на заказ по всему Камчатскому краю».">Камчатский край</span></div>
+      <div class="eyebrow">Камчатский край</div>
       <h1>Бесплатно измерим квартиру и создадим кухню под ваши размеры</h1>
-      <p class="sub" data-ok="29.10" data-why="В ТЗ подзаголовка нет. Одна строка расшифровывает обещание из заголовка: что бесплатно и почему цене можно верить. Факты — с текущего сайта: замер, 3D-проект, 3 варианта, своё производство, монтаж.">Бесплатный замер и 3D-проект в трёх вариантах. Привезём кухню с фабрики к вам домой и соберём. Гарантия 24 месяца.</p>
+      <p class="sub">Бесплатный замер и 3D-проект в трёх вариантах. Привезём кухню с фабрики к вам домой и соберём. Гарантия 24 месяца.</p>
       <div class="actions">
         <button class="btn btn-primary btn-lg" data-open="quiz">Рассчитать кухню
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
-        <span class="small muted" data-ok="28.10" data-why="Главная кнопка по ТЗ одна, мы её не трогали. Мессенджеры — тихой ссылкой: около половины заявок сейчас заканчиваются недозвоном (ТЗ), а кто не любит звонить, сразу видит, куда написать.">или <button class="btn-link small" data-open="messengers">напишите в WhatsApp, Telegram или MAX</button></span>
+        <span class="small muted">или <button class="btn-link small" data-open="messengers">напишите в WhatsApp, Telegram или MAX</button></span>
       </div>
       <div class="facts">
-        <span class="badge"><span class="mono">1850+</span> кухонь <span data-src="От КДМ, правки 29.10. В стратбазе — «на рынке с 2008 года», ООО по ОГРН зарегистрировано в 2020 году. Подтвердить год.">с 2015 года</span></span>
-        <span class="badge" data-ok="28.10" data-why="В ТЗ на первом экране только счётчик. Рейтинг — быстрое доказательство для тех, кто пришёл с рекламы (86 % трафика) и видит КДМ впервые. Цифры из стратбазы: 4,8+, 230 отзывов."><span class="stars">★</span><span class="mono">4,8</span> · 230 отзывов</span>
-        <span class="badge" data-ok="28.10" data-why="Сразу отвечает «доедут ли до меня» и честно отсекает тех, кто не с Камчатки, — это 15 % визитов (ТЗ). С текущего сайта: доставка в любой посёлок края.">Работаем по всему краю</span>
+        <span class="badge"><span class="mono">1850+</span> кухонь с 2015 года</span>
+        <span class="badge"><span class="stars">★</span><span class="mono">4,8</span> · 230 отзывов</span>
+        <span class="badge">Работаем по всему краю</span>
       </div>
     </div>
     <div class="ph">ФОТО · одна сильная фотография<br>кухня с человеком, тёплый свет<br>место под текст на мобильном · без слайдера</div>
   </div>
   <div class="container">
-    <aside class="note"><span class="note-label">Пояснение · 01 Первый экран</span><p class="tz"><b>По ТЗ — всё есть:</b> заголовок «что делаем и что получает клиент», одна главная кнопка к квизу, счётчик 1850+, одна сильная фотография, без слайдера.</p><p class="tz"><b>Созвон 28.10:</b> по главной всё ок, тексты Катя проверит сама.</p><ul><li>Задача экрана — за 10–20 секунд ответить «туда ли я попал»: что, где, почему КДМ — и одно действие.</li><li>Обсудить: показывать ли цену «от ___ ₽» (на текущем сайте — «от 67 000 ₽/пог. м»). Меньше нецелевых заявок, но можно отпугнуть.</li><li>Админка: заголовок, подзаголовок, фото, счётчик, плашки.</li></ul></aside>
   </div>
 </section>
 
@@ -452,7 +402,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
 <section class="section section-muted" id="route" aria-labelledby="route-h">
   <div class="container">
     <div class="pain-intro">
-      <div data-ok="29.10" data-why="В ТЗ дан стартовый текст: «Вы переезжаете… создаём новый вид комфорта». Предлагаем короче: боль — в заголовке, обещание — одной фразой, без рекламных слов. Финальный текст — за КДМ.">
+      <div>
         <div class="eyebrow">02 · Как мы работаем</div>
         <h2 id="route-h">Как мы делаем кухню: от первой встречи до сборки</h2>
         <p class="lead">Перед заказом кухни обычно волнуют цена, размеры и сроки. Покажем путь по шагам: что происходит на каждом и сколько он занимает.</p>
@@ -467,43 +417,42 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <div class="station">
         <span class="dot">01</span>
         <div class="card">
-          <div class="row"><h3>Замер и проект</h3><span class="badge badge-secondary mono" data-ok="29.10" data-why="Сроков на станциях в ТЗ нет. Срок на каждом шаге отвечает на главный вопрос сегмента «срочный переезд» — «успею ли». Срок замера и проекта даёт КДМ (на текущем сайте — 3 варианта проекта за 12 часов).">1–5 дней</span></div>
+          <div class="row"><h3>Замер и проект</h3><span class="badge badge-secondary mono">1–5 дней</span></div>
           <p class="worry"><b>Тревожит</b>Не знаю точных размеров. Боюсь, что ничего не влезет, а трубы и ниши всё испортят.</p>
-          <p class="do"><b>Что делаем</b>Всё начинается с замера: <span data-src="Текущий сайт: «Бесплатный замер в день обращения», «учтёте все нюансы помещения — трубы, ниши, стены».">мастер приедет к вам и учтёт всё, что влияет на размеры, от труб и ниш до места под холодильник.</span> <span data-src="Текущий сайт: «В течение 12 часов наши дизайнеры создают 3 варианта проекта кухни»; в квизе — «в 3-х ценовых вариантах».">По этим данным дизайнер сделает 3D-проект в трёх вариантах по цене,</span> и вы увидите, как кухня встанет в вашем помещении.</p>
+          <p class="do"><b>Что делаем</b>Всё начинается с замера: мастер приедет к вам и учтёт всё, что влияет на размеры, от труб и ниш до места под холодильник. По этим данным дизайнер сделает 3D-проект в трёх вариантах по цене, и вы увидите, как кухня встанет в вашем помещении.</p>
         </div>
       </div>
       <div class="station">
         <span class="dot">02</span>
         <div class="card">
-          <div class="row"><h3>Договор</h3><span class="badge badge-secondary mono" data-ok="29.10" data-why="Срок на станции — наша доработка. Срок этапа «договор» даёт КДМ.">1 день</span></div>
+          <div class="row"><h3>Договор</h3><span class="badge badge-secondary mono">1 день</span></div>
           <p class="worry"><b>Тревожит</b>Подпишу договор, а сроки потом сдвинут.</p>
-          <p class="do"><b>Что делаем</b>Когда проект выбран, мы подписываем договор. <span data-src="Текущий сайт: «Срок прописан в договоре, и мы его соблюдаем».">Срок прописан в нём, и мы его соблюдаем.</span> <span data-src="Текущий сайт и стратбаза: «Рассрочка 0 % — оформим прямо в салоне за 5 минут».">А если не хочется платить всю сумму сразу, рассрочку 0 % оформим в салоне за 5 минут.</span></p>
+          <p class="do"><b>Что делаем</b>Когда проект выбран, мы подписываем договор. Срок прописан в нём, и мы его соблюдаем. А если не хочется платить всю сумму сразу, рассрочку 0 % оформим в салоне за 5 минут.</p>
         </div>
       </div>
       <div class="station">
         <span class="dot">03</span>
         <div class="card">
-          <div class="row"><h3>Производство и доставка</h3><span class="badge badge-secondary mono" data-ok="29.10" data-why="Срок на станции — наша доработка. «1–4 месяца» — от КДМ (правки 29.10), а в тексте этапа — 30 дней на Камчатке. Видимо, 4 месяца — линия из Санкт-Петербурга с доставкой. Уточнить у КДМ.">1–4 месяца</span></div>
+          <div class="row"><h3>Производство и доставка</h3><span class="badge badge-secondary mono">1–4 месяца</span></div>
           <p class="worry"><b>Тревожит</b>Кухня нужна к переезду, а ждать придётся месяцами.</p>
-          <p class="do"><b>Что делаем</b><span data-src="Текущий сайт: «У нас собственное производство на Камчатке: сами делаем корпуса и фасады».">Кухню мы делаем на производстве на Камчатке за 30 дней,</span> поэтому за срок отвечаем сами. <span data-src="Стратбаза: «Предоставляем временную кухню на период изготовления». ТЗ, сценарий 3.">Пока она создаётся, мы поставим вам временную кухню,</span> а когда всё будет готово, привезём заказ домой и соберём.</p>
+          <p class="do"><b>Что делаем</b>Кухню мы делаем на производстве на Камчатке за 30 дней, поэтому за срок отвечаем сами. Пока она создаётся, мы поставим вам временную кухню, а когда всё будет готово, привезём заказ домой и соберём.</p>
         </div>
       </div>
       <div class="station">
         <span class="dot">04</span>
         <div class="card">
-          <div class="row"><h3>Монтаж</h3><span class="badge badge-secondary mono" data-ok="29.10" data-why="Срок на станции — наша доработка. 1–3 дня — с текущего сайта: «доставляем, поднимаем и монтируем… 1–3 дня».">1–3 дня</span></div>
+          <div class="row"><h3>Монтаж</h3><span class="badge badge-secondary mono">1–3 дня</span></div>
           <p class="worry"><b>Тревожит</b>Соберут криво, а потом не дозвонишься.</p>
-          <p class="do"><b>Что делаем</b><span data-src="Текущий сайт: «Доставляем в Петропавловск-Камчатский, Елизово, Вилючинск и любой посёлок края», «доставляем, поднимаем и монтируем».">Кухни мы монтируем сами и отвечаем за качество.</span> <span data-src="Текущий сайт: «гарантия на 24 месяца». На что распространяется — уточнить у КДМ.">На них действует гарантия 24 месяца,</span> а если что-то окажется не так, исправим за свой счёт.</p>
+          <p class="do"><b>Что делаем</b>Кухни мы монтируем сами и отвечаем за качество. На них действует гарантия 24 месяца, а если что-то окажется не так, исправим за свой счёт.</p>
         </div>
       </div>
     </div>
 
-    <div class="row" style="margin-top:32px" data-ok="28.10" data-why="Кнопок после маршрута в ТЗ нет. Кто дочитал маршрут, уже готов к шагу: две кнопки под два состояния — «готов к замеру» и «сначала хочу понять цену».">
+    <div class="row" style="margin-top:32px">
       <button class="btn btn-primary" data-open="lead" data-topic="Запись на бесплатный 3D-проект">Получить бесплатный 3D-проект</button>
       <button class="btn btn-outline" data-open="quiz">Сначала узнать цену</button>
     </div>
 
-    <aside class="note"><span class="note-label">Пояснение · 02 Боль и маршрут</span><p class="tz"><b>По ТЗ — всё есть:</b> креативный блок под первым экраном, минимум текста, стрелка вниз, четыре станции — замер и проект, договор, производство, доставка и монтаж, — на каждой «что тревожит» и «что делаем».</p><p class="tz"><b>Созвон 28.10:</b> блок и кнопки — ок. В дизайне попробуем горизонтальную прокрутку шагов.</p><p class="tz"><b>Правки КДМ 29.10:</b> заголовок, подводка, тексты и сроки станций — от Кати. Пары «Тревожит / Что делаем» оставили: их требует ТЗ. В правках они были убраны.</p><ul><li>Закрывает 4 сегмента стратбазы: поэтапный ремонт (замер, бюджет), маленькая кухня (трубы, ниши), срочный переезд (сроки, временная кухня), первая кухня (3 варианта, договор).</li><li>Факты на станциях — с текущего сайта и из стратбазы, источник — при наведении.</li><li>Админка: тексты станций и сроки.</li></ul></aside>
   </div>
 </section>
 
@@ -515,13 +464,13 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <h2 id="projects-h">Найдите кухню, похожую на вашу</h2>
       <p class="lead">Внутри каждого нашего проекта своя история: что хотели клиенты, какие были сложности и что получилось.</p>
     </div>
-    <div class="filters" role="group" aria-label="Фильтр проектов" data-ok="28.10" data-why="В ТЗ фильтр «маленькие, ниши, угловые». На созвоне 28.10 КДМ решил делить проекты по форме кухни: прямые, угловые, с островом. Возможно, Катя добавит сегменты вроде «для маленькой квартиры».">
+    <div class="filters" role="group" aria-label="Фильтр проектов">
       <button class="chip" aria-pressed="true" data-filter="all">Все</button>
       <button class="chip" aria-pressed="false" data-filter="straight">Прямые</button>
       <button class="chip" aria-pressed="false" data-filter="corner">Угловые</button>
       <button class="chip" aria-pressed="false" data-filter="island">С островом</button>
     </div>
-    <div class="slider" data-ok="28.10" data-why="Решили на созвоне 28.10: проекты — слайдером по несколько карточек со стрелками, чтобы 20+ кейсов не превращались в длинное полотно. Бегущую строку не делаем: дальние карточки почти никто не увидит.">
+    <div class="slider">
       <div class="track" id="projectsGrid"></div>
     </div>
     <div class="slider-nav" id="projNav">
@@ -534,22 +483,21 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <p class="muted small" style="margin-top:6px">Посмотрите все проекты, а похожие на вашу кухню покажем на замере.</p>
       <button class="btn btn-outline btn-sm" style="margin-top:14px" data-filter-reset>Показать все проекты</button>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 03 Портфолио</span><p class="tz"><b>По ТЗ:</b> карточки с фото, площадью, сроком, ценой и именем дизайнера; фильтр; попап с историей проекта и кнопкой «Хочу такую же».</p><p class="tz"><b>Созвон 28.10:</b> фильтр — по форме кухни: прямые, угловые, с островом (в ТЗ было «маленькие, ниши, угловые»). Проекты — слайдером со стрелками, без длинного полотна и без бегущей строки. «Было и стало» убрали — фото «было» у КДМ обычно нет; вместо него «3D-проект → готовая кухня». Фото в попапе — каруселью.</p><ul><li>Катя, возможно, добавит сегменты вроде «для маленькой квартиры» и выделит главные проекты.</li><li>В карточке сверх ТЗ — название проекта и метка типа, как на текущем сайте.</li><li>Готовые фото — в папке «КДМ. Готовые проекты» (лучшие серии: 1, 2, 6, 8, 11, 13, 16). Данные по проектам — от КДМ.</li><li>Админка: проекты целиком — фото, поля, история, тип для фильтра.</li></ul></aside>
   </div>
 </section>
 
 <!-- 4. КВИЗ -->
 <section class="section section-muted" id="quiz-block" aria-labelledby="quiz-h">
   <div class="container">
-    <div class="promo" data-ok="29.10" data-why="Блока акции в ТЗ нет, а на текущем сайте акций две сразу. Предлагаем одну и только рядом с квизом — повод оставить контакт сейчас, без ощущения распродажи. На созвоне 28.10 договорились: акция — награда за прохождение квиза.">
+    <div class="promo">
       <span class="badge badge-coral">Акция</span>
-      <span style="flex:1;min-width:220px" data-src="Акция по скриншоту КДМ от 29.10: «Акция до 5 ноября, 1 из 3 подарков на выбор, до 23.000 ₽ — 0 рублей»; подарки: варочная поверхность, смеситель, мойка.">Подарок на выбор: варочная поверхность, смеситель или мойка. До 5 ноября</span>
+      <span style="flex:1;min-width:220px">Подарок на выбор: варочная поверхность, смеситель или мойка. До 5 ноября</span>
     </div>
     <div class="quiz-wrap">
       <div class="card quiz" id="quiz">
-        <div class="eyebrow"><span data-why="Место блока — наше предложение. В ТЗ квиз 10-й, перед шкафами. Подняли на 4-е, сразу после портфолио, где интерес самый сильный: при 74 секундах на сайте (ТЗ) до 10-го блока доходят немногие. ТЗ разрешает менять порядок с обоснованием.">04 · Расчёт кухни</span></div>
+        <div class="eyebrow">04 · Расчёт кухни</div>
         <h2 id="quiz-h">Рассчитайте кухню за 1 минуту</h2>
-        <p class="lead" style="margin-bottom:24px">Два коротких вопроса, затем контакт. <span data-ok="28.10" data-why="Вопросы после контакта можно пропустить: заявка уже ушла в Битрикс24. Сейчас контакты оставляют лишь 10 % начавших квиз (ТЗ) — каждый обязательный вопрос режет эту цифру.">Остальное — по желанию</span>, фото — в конце и только если удобно.</p>
+        <p class="lead" style="margin-bottom:24px">Два коротких вопроса, затем контакт. Остальное — по желанию, фото — в конце и только если удобно.</p>
         <div class="quiz-head"><b id="qHead" class="mono small">Шаг <span id="qNum">1</span> из 6</b><div class="progress"><span id="qBar"></span></div></div>
         <div class="quiz-body">
           <!-- 1 -->
@@ -575,7 +523,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
               <button class="option option-row" aria-pressed="false" data-v="Через полгода и позже">Через полгода и позже</button>
               <button class="option option-row" aria-pressed="false" data-v="Пока присматриваюсь">Пока присматриваюсь</button>
             </div>
-            <div class="tip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span data-src="Стратбаза: «Предоставляем временную кухню на период изготовления». ТЗ, сценарий 3.">Если кухня нужна срочно, на время изготовления мы поставим временную.</span></div>
+            <div class="tip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>Если кухня нужна срочно, на время изготовления мы поставим временную.</div>
           </div>
           <!-- 3 -->
           <div class="q-step" data-step="3">
@@ -589,7 +537,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
             </ul>
             <form class="form" id="qContact" novalidate>
               <div class="field"><span class="label">Как вам удобнее, чтобы мы связались?</span>
-                <div class="chips" data-ok="28.10" data-why="Выбор способа связи — по ТЗ. Наше — что по умолчанию выбран WhatsApp, а не звонок: около половины заявок сейчас заканчиваются недозвоном (ТЗ)." data-method id="qMethod" role="group" aria-label="Способ связи">
+                <div class="chips" data-method id="qMethod" role="group" aria-label="Способ связи">
                   <button type="button" class="chip" aria-pressed="false" data-v="Позвонить">Позвонить</button>
                   <button type="button" class="chip" aria-pressed="true" data-v="WhatsApp">WhatsApp</button>
                   <button type="button" class="chip" aria-pressed="false" data-v="Telegram">Telegram</button>
@@ -634,11 +582,11 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
               <button class="option option-row" aria-pressed="false" data-v="Есть примерные размеры, но проекта нет">Есть примерные размеры, но проекта нет</button>
               <button class="option option-row" aria-pressed="false" data-v="Нужна помощь с самого начала">Нужна помощь с самого начала</button>
             </div>
-            <p class="label" style="margin-top:8px" data-ok="28.10" data-why="По ТЗ квиз строится вокруг фото. На созвоне 28.10 решили: фото — последним шагом и явно необязательно. Часть клиентов перестаёт отвечать, когда просят фото или размеры.">Пришлите фото кухни, план или проект, если есть</p>
+            <p class="label" style="margin-top:8px">Пришлите фото кухни, план или проект, если есть</p>
             <label class="drop">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
               <b>Выбрать файлы</b>
-              <span class="hint">Фото, план с размерами или картинка из интернета. <span data-why="Лимит — наше предложение, согласовать с Никитой: 20 МБ хватает на любое фото с телефона.">До 20 МБ.</span></span>
+              <span class="hint">Фото, план с размерами или картинка из интернета. До 20 МБ.</span>
               <input type="file" accept="image/*,.pdf" multiple class="sr-only" id="qFiles">
             </label>
             <div class="files" id="qFileList"></div>
@@ -649,25 +597,24 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
           <div class="q-step" data-step="7">
             <span class="ok" style="width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--coral-soft);color:var(--primary)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
             <p class="q-title">Заявка у нас</p>
-            <p class="muted" id="qDoneText" data-ok="28.10" data-why="Текст зависит от камчатского времени: ночью обещаем ответ утром, а не «через 10 минут». 10 минут — с текущего сайта, график пн–сб 11:00–19:00 — от КДМ (29.10)."></p>
-            <ul class="steps-next" data-ok="28.10" data-why="Экрана после отправки в ТЗ нет. Три шага «что дальше» снимают тревогу «и что теперь?» и готовят к звонку или сообщению. Порядок — как в процессе на текущем сайте.">
+            <p class="muted" id="qDoneText"></p>
+            <ul class="steps-next">
               <li><span class="n">01</span><span>Пришлём ориентир цены в трёх вариантах</span></li>
               <li><span class="n">02</span><span>Договоримся о бесплатном замере в удобный день</span></li>
               <li><span class="n">03</span><span>Сделаем 3D-проект, и вы увидите, как кухня встанет у вас</span></li>
             </ul>
-            <div class="promo" style="margin:0" data-ok="28.10" data-why="Акции в ТЗ нет (см. блок квиза). «Закрепим скидку» — формулировка с текущего сайта: повод не откладывать решение после заявки."><span class="badge badge-coral">Акция</span><span class="small">Подарок на выбор закреплён за вами до 5 ноября</span></div>
-            <aside class="note"><span class="note-label">Пояснение · финал квиза</span>Вариант А (здесь): ориентир цены присылает дизайнер. Вариант Б: показываем диапазон сразу на этом экране — тогда КДМ даёт диапазоны по типам кухонь. Решить с Катей.</aside>
+            <div class="promo" style="margin:0"><span class="badge badge-coral">Акция</span><span class="small">Подарок на выбор закреплён за вами до 5 ноября</span></div>
           </div>
         </div>
         <div class="quiz-foot" id="qFoot">
           <button class="btn btn-ghost" id="qBack">Назад</button>
           <div class="right">
-            <button class="btn btn-ghost" id="qSkip" data-ok="28.10" data-why="Пропуск — наша доработка. Шаги 4–6 после контакта необязательны, фото можно прислать позже: лучше заявка без фото, чем брошенный квиз.">Пропустить</button>
+            <button class="btn btn-ghost" id="qSkip">Пропустить</button>
             <button class="btn btn-primary" id="qNext">Дальше</button>
           </div>
         </div>
       </div>
-      <div class="card" data-ok="28.10" data-why="В ТЗ нет. Рядом с вопросами — что человек получит за свой номер: так проще решиться оставить контакт. Пункты — из ТЗ (ориентир цены, проект) и с текущего сайта (3 варианта, бесплатный замер).">
+      <div class="card">
         <h3 style="margin-bottom:18px">Что вы получите</h3>
         <ul class="gets">
           <li><span class="n">01</span><span><b>Ориентир цены</b><br><span class="muted small">в трёх ценовых вариантах</span></span></li>
@@ -676,7 +623,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
         </ul>
       </div>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 04 Квиз</span><p class="tz"><b>По ТЗ:</b> квиз «Рассчитайте кухню за 1 минуту» («Пришлите фото, мы сделаем проект»): 4–5 шагов, контакт после 2-го шага, загрузка фото, ориентир по цене.</p><p class="tz"><b>Созвон 28.10:</b> квиз — прямо в блоке, без всплывающего окна. Фото — последним шагом и явно необязательно: часть клиентов перестаёт отвечать, когда просят фото или размеры. Акция за прохождение и «Что вы получите» — ок.</p><p class="tz"><b>Правки КДМ 29.10:</b> вопросы и варианты — из действующего квиза КДМ. В правках контакт стоял последним, шестым шагом, а фото не было. Вернули по ТЗ и решению созвона: контакт — третьим шагом, после него всё можно пропустить, фото — в конце вместе с вопросом о проекте.</p><ul><li>Шаги: 1 — ситуация, 2 — срок, 3 — контакт, 4 — место замера, 5 — что важно, 6 — проект и фото.</li><li>Шагов 6, в ТЗ — 4–5: КДМ прислал 5 вопросов. Если держаться ТЗ строго, убрать шаг 4 или 5 — решить с Катей.</li><li>Кнопки «Рассчитать кухню» и «Хочу такую же» ведут сюда. Из «Хочу такую же» в заявку уходит и форма кухни.</li><li>Админка: вопросы и варианты ответов, текст акции.</li></ul></aside>
   </div>
 </section>
 
@@ -689,7 +635,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <p class="lead">Посмотрите проекты каждого и запишитесь в салон к тому, чей стиль вам ближе.</p>
     </div>
     <div class="grid-cards" id="designersGrid"></div>
-    <aside class="note"><span class="note-label">Пояснение · 05 Дизайнеры</span><p class="tz"><b>По ТЗ:</b> фото, имя, стиль, любимые проекты, как работает с референсом клиента, 2–3 проекта, кнопка «Записаться на замер к этому дизайнеру».</p><p class="tz"><b>Созвон 28.10:</b> стиль, любимые проекты и работу с референсом КДМ сведёт в одну короткую строку и, возможно, добавит другой пункт. Проекты дизайнера по клику открываются только фотографиями — без перехода и без текста.</p><ul><li>Миниатюры проектов сейчас мелковаты — в дизайне сделаем крупнее, например горизонтальной карточкой.</li><li>Кнопка открывает короткую форму, имя дизайнера — в заголовке и в заявке Битрикс24.</li><li>Админка: добавить, изменить, удалить дизайнера.</li></ul></aside>
   </div>
 </section>
 
@@ -699,15 +644,15 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <div class="section-head">
       <div class="eyebrow">06 · Производство</div>
       <h2 id="production-h">Производство на Камчатке и материке</h2>
-      <div style="margin-top:14px;max-width:760px"><span data-src="Текущий сайт kuhni41.ru (проверено 29.10): «собственная фабрика на Камчатке, делаем корпуса и фасады», «современное немецкое оборудование», вторая линейка в Санкт-Петербурге, фурнитура Hettich, Blum и Hafele. Про цех и контроль качества данных нет, ждём от КДМ.">Корпуса и фасады мы делаем сами на современном немецком оборудовании, на производстве на Камчатке и материке. Фурнитуру берём у Blum, Hettich и Häfele.</span></div>
+      <div style="margin-top:14px;max-width:760px">Корпуса и фасады мы делаем сами на современном немецком оборудовании, на производстве на Камчатке и материке. Фурнитуру берём у Blum, Hettich и Häfele.</div>
     </div>
     <div class="facts-grid">
-      <div class="card fact"><div class="big"><span data-src="Текущий сайт: «собирает кухню в среднем за 30 дней». По ТЗ цифры даёт КДМ — подтвердить.">от 30</span></div><div class="card-desc">дней в среднем занимает изготовление на Камчатке, срок прописан в договоре</div></div>
-      <div class="card fact"><div class="big">1850+</div><div class="card-desc">кухонь сделано <span data-src="От КДМ, правки 29.10. В стратбазе — «на рынке с 2008 года», ООО по ОГРН зарегистрировано в 2020 году. Подтвердить год.">с 2015 года</span>, и ни одна не повторяет другую</div></div>
-      <div class="card fact"><div class="big"><span data-src="Текущий сайт: «фурнитура от европейских брендов Hettich, Blum и Hafele».">3 бренда</span></div><div class="card-desc">Blum, Hettich и Häfele: петли и направляющие, от которых зависят дверцы и ящики</div></div>
-      <div class="card fact"><div class="big"><span data-src="Текущий сайт: «гарантия на 24 месяца». Четвёртую цифру для блока обещал дать КДМ, пока стоит гарантия.">24 месяца</span></div><div class="card-desc">гарантия, если мы ведём заказ от 3D-проекта до сборки</div></div>
+      <div class="card fact"><div class="big">от 30</div><div class="card-desc">дней в среднем занимает изготовление на Камчатке, срок прописан в договоре</div></div>
+      <div class="card fact"><div class="big">1850+</div><div class="card-desc">кухонь сделано с 2015 года, и ни одна не повторяет другую</div></div>
+      <div class="card fact"><div class="big">3 бренда</div><div class="card-desc">Blum, Hettich и Häfele: петли и направляющие, от которых зависят дверцы и ящики</div></div>
+      <div class="card fact"><div class="big">24 месяца</div><div class="card-desc">гарантия, если мы ведём заказ от 3D-проекта до сборки</div></div>
     </div>
-    <div class="lines" data-ok="28.10" data-why="В ТЗ нет. Вторая линия есть на текущем сайте: Санкт-Петербург — на 25 % дешевле, срок с доставкой 3–4 месяца. Подаём как выбор: кому важен срок — Камчатка, кому бюджет — Петербург. Так цена не отпугивает.">
+    <div class="lines">
       <div class="card">
         <span class="badge badge-accent">Камчатка</span>
         <h3 style="margin:12px 0 6px">Когда важен срок</h3>
@@ -724,7 +669,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <div class="ph">ФОТО · руки и деталь</div>
       <div class="ph">ФОТО · контроль качества</div>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 06 Производство</span><p class="tz"><b>По ТЗ — всё есть:</b> фото и видео цеха — мужчины за работой, станки, материалы, контроль качества; 3–4 коротких факта.</p><p class="tz"><b>Созвон 28.10:</b> две линии производства — ок. Видео нужно: КДМ посмотрит, что уже есть, — снимать цех сложно. Четвёртую цифру даст КДМ.</p><ul><li>Описание и цифры — от КДМ (29.10), источник при наведении. Четвёртая цифра пока — гарантия: КДМ обещал дать свою. Год «с 2015» подтвердить: в стратбазе — 2008.</li><li>Тёмная секция «Океан» — камчатский акцент из утверждённой концепции.</li><li>Видео — короткое, без звука, грузится по требованию, чтобы не мешать скорости.</li><li>Админка: тексты, факты, фото и видео.</li></ul></aside>
   </div>
 </section>
 
@@ -733,27 +677,26 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">07 · О компании</div>
-      <h2 id="about-h"><span data-src="От КДМ, правки 29.10. В стратбазе — «на рынке с 2008 года», ООО по ОГРН зарегистрировано в 2020 году. Подтвердить год.">С 2015 года</span> — 1850+ кухонь на&nbsp;Камчатке</h2>
+      <h2 id="about-h">С 2015 года — 1850+ кухонь на&nbsp;Камчатке</h2>
     </div>
     <div class="awards">
-      <div class="ph"><span data-src="Текущий сайт: «Победители конкурса Сбера и «Торговля Камчатки»». Нужны сами дипломы.">НАГРАДА · конкурс Сбера</span></div>
-      <div class="ph"><span data-src="Текущий сайт: «Победители конкурса Сбера и «Торговля Камчатки»». Нужны сами дипломы.">НАГРАДА · «Торговля Камчатки»</span></div>
-      <div class="ph"><span data-src="ТЗ: «документы Вардек: есть». Стратбаза: единственный официальный представитель Вардек на Камчатке.">СЕРТИФИКАТ · официальный представитель Вардек</span></div>
+      <div class="ph">НАГРАДА · конкурс Сбера</div>
+      <div class="ph">НАГРАДА · «Торговля Камчатки»</div>
+      <div class="ph">СЕРТИФИКАТ · официальный представитель Вардек</div>
       <div class="ph">[сертификат или награда]</div>
     </div>
     <div class="adv">
-      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h4>Гарантия <span data-src="Текущий сайт: «гарантия на 24 месяца». В ТЗ — просто «гарантия».">24 месяца</span></h4><p class="card-desc"><span data-src="Текущий сайт kuhni41.ru (проверено 29.10): «гарантия на 24 месяца» при полном цикле от дизайн-проекта до сборки. Что именно покрывает, на сайте не расписано.">Действует на кухни, которые мы создаём от 3D-проекта до сборки.</span></p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h4>Гарантия 24 месяца</h4><p class="card-desc">Действует на кухни, которые мы создаём от 3D-проекта до сборки.</p></div>
       <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span><h4>Исправим за свой счёт</h4><p class="card-desc">Если после монтажа что-то окажется не так, приедем и исправим.</p></div>
-      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg></span><h4>Доставка в Камчатском крае</h4><p class="card-desc"><span data-src="Текущий сайт: «Доставляем в Петропавловск-Камчатский, Елизово, Вилючинск и любой посёлок края».">Привезём в Петропавловск-Камчатский, Елизово, Вилючинск и посёлки края.</span></p></div>
-      <div class="card" data-ok="28.10" data-why="В преимуществах блока по ТЗ этого нет, но это сценарий 3 ТЗ («увидеть, что есть временная кухня») и преимущество № 2 в стратбазе. На текущем сайте его нет, а для срочного переезда это сильнейший аргумент."><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span><h4>Временная кухня</h4><p class="card-desc">Поставим на время изготовления, чтобы вам было где готовить.</p></div>
-      <div class="card" data-ok="28.10" data-why="В ТЗ — сертификаты и документы Вардек. Выносим в преимущество: «единственный официальный представитель на Камчатке» — преимущество № 1 в стратбазе, сильнее, чем сертификат в ряду наград."><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></span><h4>Официальный представитель Вардек</h4><p class="card-desc">Единственная компания на Камчатке с таким статусом.</p></div>
-      <div class="card" data-ok="28.10" data-why="В ТЗ нет. Есть в стратбазе и на текущем сайте: снимает барьер «нет всей суммы сразу». Реклама рассрочки требует банк и условия — дисклеймер ниже."><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><h4>Рассрочка 0 %*</h4><p class="card-desc">На срок до 6 месяцев, без первого взноса. Оформим в салоне за 5 минут.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg></span><h4>Доставка в Камчатском крае</h4><p class="card-desc">Привезём в Петропавловск-Камчатский, Елизово, Вилючинск и посёлки края.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span><h4>Временная кухня</h4><p class="card-desc">Поставим на время изготовления, чтобы вам было где готовить.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></span><h4>Официальный представитель Вардек</h4><p class="card-desc">Единственная компания на Камчатке с таким статусом.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><h4>Рассрочка 0 %*</h4><p class="card-desc">На срок до 6 месяцев, без первого взноса. Оформим в салоне за 5 минут.</p></div>
     </div>
     <p class="footnote">* Рассрочку предоставляет ПАО Сбербанк, генеральная лицензия Банка России № 1481 от 11.08.2015. Условия: первоначальный взнос 0 %, срок до 6 месяцев, переплата 0 % за счёт скидки продавца. Требования к заёмщику: паспорт РФ, возраст от 18 лет. Не является публичной офертой. Подробности уточняйте у менеджеров в салоне.</p>
     <div class="row" style="margin-top:24px">
       <button class="btn btn-primary" data-open="lead" data-topic="Заявка с блока «О компании»" data-title="Оставить заявку">Оставить заявку</button>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 07 О компании</span><p class="tz"><b>По ТЗ — всё есть:</b> сначала награды и сертификаты «Камчатского дома мебели», затем преимущества — доставка любым способом, гарантия, «Исправим за свой счёт», — кнопка «Оставить заявку».</p><p class="tz"><b>Созвон 28.10:</b> блок ок, добавлять ничего не нужно. Тексты КДМ сверит. Нужны фото наград нормального качества.</p><ul><li>Три преимущества сверх ТЗ — в рамках: временная кухня, Вардек, рассрочка.</li><li>Награды — с текущего сайта, нужны сами дипломы и сертификаты.</li><li>Админка: тексты и фото.</li></ul></aside>
   </div>
 </section>
 
@@ -766,21 +709,20 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <p class="lead">Клиенты рассказывают, как прошёл заказ: от замера до сборки кухни.</p>
     </div>
     <div class="card rating">
-      <div class="score"><span data-src="Стратбаза: «рейтинг 4.8+, больше 300 оценок, 230 отзывов». Обновлять по 2ГИС и Яндекс Картам.">4,8</span><span class="stars" style="font-size:22px;margin-left:8px">★★★★★</span></div>
+      <div class="score">4,8<span class="stars" style="font-size:22px;margin-left:8px">★★★★★</span></div>
       <div class="row" style="justify-content:space-between">
-        <span class="muted" data-src="Стратбаза: «рейтинг 4.8+, больше 300 оценок, 230 отзывов».">230 отзывов · 300+ оценок</span>
+        <span class="muted">230 отзывов · 300+ оценок</span>
         <span class="row">
           <a class="btn btn-outline btn-sm" href="#" onclick="return false">Открыть в 2ГИС</a>
           <a class="btn btn-outline btn-sm" href="#" onclick="return false">Открыть в Яндекс Картах</a>
         </span>
       </div>
     </div>
-    <div class="tabs" role="tablist" aria-label="Тип отзывов" style="margin-bottom:16px" data-ok="28.10" data-why="Решили на созвоне 28.10: видео- и фотоотзывы — двумя вкладками внутри блока. Новые видео снять сложно — клиенты редко пускают домой, — поэтому покажем те, что есть, а рядом — фото клиента на кухне с парой слов.">
+    <div class="tabs" role="tablist" aria-label="Тип отзывов" style="margin-bottom:16px">
       <button class="tab" role="tab" aria-selected="true" data-rtab="video">Видеоотзывы</button>
       <button class="tab" role="tab" aria-selected="false" data-rtab="photo">Фото и текст</button>
     </div>
     <div class="grid-cards" id="reviewsGrid"></div>
-    <aside class="note"><span class="note-label">Пояснение · 08 Отзывы</span><p class="tz"><b>По ТЗ — всё есть:</b> отзывы с именами и фото, рейтинг, ссылки на 2ГИС и Яндекс Карты для проверки, видео там, где оно есть; «фото кухни через год» — из раздела 6 ТЗ.</p><p class="tz"><b>Созвон 28.10:</b> ссылки на 2ГИС и Яндекс Карты — важно. Видео- и фотоотзывы — двумя вкладками. Новые видео снять сложно, Катя соберёт то, что есть.</p><ul><li>Текст отзыва не правим — публикуем как есть.</li><li>Рейтинг и число отзывов — из стратбазы, проверять и обновлять.</li><li>Админка: добавить, изменить, удалить отзыв.</li></ul></aside>
   </div>
 </section>
 
@@ -792,7 +734,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <h2 id="useful-h">Что стоит знать до ремонта кухни</h2>
       <p class="lead">Советы дизайнеров, проверенные мастера и материалы. Пригодится, даже если до заказа кухни ещё далеко.</p>
     </div>
-    <div class="filters" role="group" aria-label="Категории" data-why="Категории карточек — по ТЗ, а фильтр по ним — наш. Чипы помогают сразу найти своё: кому мастера, кому материалы.">
+    <div class="filters" role="group" aria-label="Категории">
       <button class="chip" aria-pressed="true" data-ucat="all">Все</button>
       <button class="chip" aria-pressed="false" data-ucat="tips">Лайфхаки дизайнеров</button>
       <button class="chip" aria-pressed="false" data-ucat="masters">Проверенные мастера</button>
@@ -803,7 +745,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <div class="row" style="margin-top:24px">
       <button class="btn btn-outline" data-open="lead" data-topic="Консультация по плану ремонта и замерам">Подскажем по плану ремонта и замерам</button>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 09 Полезное</span><p class="tz"><b>По ТЗ — всё есть:</b> слайдер карточек; категории — лайфхаки от дизайнеров, проверенные мастера, материалы, тренды; по клику короткий попап, как в портфолио; кнопка «Подскажем по плану ремонта и замерам».</p><p class="tz"><b>Созвон 28.10:</b> блок ок — для интереса к ремонту и будущего SEO.</p><ul><li>Для тех, кто ещё не готов, — сегмент «поэтапный ремонт»: польза сейчас и повод связаться позже.</li><li>Админка: добавить, изменить, удалить карточку (ТЗ, договор п. 6.13).</li></ul></aside>
   </div>
 </section>
 
@@ -816,7 +757,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       </a>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 10 Шкафы</span><p class="tz"><b>По ТЗ — всё есть:</b> компактная полоса внизу страницы, одна строка «Ещё мы делаем шкафы, подробнее тут» и одна кнопка со ссылкой на другой сайт, без галереи, цен и каталога.</p><p class="tz"><b>Созвон 28.10:</b> отдельный сайт шкафов есть, полосу оставляем. В дизайне — как рекламный баннер с кнопкой.</p>Ссылку даёт КДМ.</aside>
   </div>
 </section>
 
@@ -834,13 +774,13 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
           <div><dt>Часы работы</dt><dd>Пн–Сб, 11:00–19:00</dd></div>
           <div><dt>Телефон</dt><dd class="mono">+7 (924) 585-82-63</dd></div>
           <div><dt>Мессенджеры</dt><dd class="row" style="margin-top:8px">
-            <a class="btn btn-outline btn-sm" href="https://wa.me/79245873702" target="_blank" rel="noopener" data-src="От КДМ, правки 29.10. Номер WhatsApp (+7 924 587-37-02) не совпадает с основным телефоном (+7 924 585-82-63) — подтвердить.">WhatsApp</a>
+            <a class="btn btn-outline btn-sm" href="https://wa.me/79245873702" target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-outline btn-sm" href="https://t.me/dommebeli41" target="_blank" rel="noopener">Telegram</a>
             <a class="btn btn-outline btn-sm" href="#" onclick="return false">MAX</a>
             <a class="btn btn-outline btn-sm" href="https://vk.com/dommebeli41" target="_blank" rel="noopener">ВКонтакте</a>
           </dd></div>
         </dl>
-        <div class="ph map" data-ok="28.10" data-why="Карта — по ТЗ. Наше — что она грузится по клику: так не тормозит загрузку страницы, а LCP ≤ 2,5 с — блокирующий критерий приёмки (ТЗ).">КАРТА · Яндекс Карты<br>грузится по клику, чтобы не тормозить страницу</div>
+        <div class="ph map">КАРТА · Яндекс Карты<br>грузится по клику, чтобы не тормозить страницу</div>
       </div>
       <div class="card">
         <form class="form lead-form" novalidate data-topic="Запись на 3D-проект в салоне (форма в контактах)">
@@ -851,7 +791,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
           <div class="field"><label class="label" for="cName">Имя</label><input class="input" id="cName" name="name" autocomplete="given-name"></div>
           <div class="field"><label class="label" for="cPhone">Телефон</label><input class="input" id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><p class="error">Проверьте номер: после +7 нужно 10 цифр</p></div>
           <div class="field"><span class="label">Как с вами связаться</span>
-            <div class="chips" data-ok="28.10" data-why="Выбор способа связи — по ТЗ. Наше — что по умолчанию выбран WhatsApp, а не звонок: около половины заявок сейчас заканчиваются недозвоном (ТЗ)." data-method role="group" aria-label="Способ связи">
+            <div class="chips" data-method role="group" aria-label="Способ связи">
               <button type="button" class="chip" aria-pressed="false" data-v="Позвонить">Позвонить</button>
               <button type="button" class="chip" aria-pressed="true" data-v="WhatsApp">WhatsApp</button>
               <button type="button" class="chip" aria-pressed="false" data-v="Telegram">Telegram</button>
@@ -868,11 +808,10 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
         <div class="success" aria-live="polite">
           <span class="ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
           <h3>Заявка у нас</h3>
-          <p class="muted" data-success-text data-ok="28.10" data-why="Экран после отправки — наша доработка. Текст зависит от способа связи и камчатского времени: ночью обещаем ответ утром, а не «через 10 минут». 10 минут — с текущего сайта, график даст КДМ."></p>
+          <p class="muted" data-success-text></p>
         </div>
       </div>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · 11 Контакты и форма</span><p class="tz"><b>По ТЗ — всё есть:</b> адрес салона, карта, часы работы, телефон, мессенджеры (WhatsApp, Telegram, MAX, ВКонтакте), форма из 3 полей — имя, телефон, способ связи — с вариантом «напишите, не звоните».</p><p class="tz"><b>Созвон 28.10:</b> блок ок. Карта — по клику, детали обсудим с разработчиком.</p><ul><li>Согласие — отдельный пустой чекбокс со ссылкой на политику, без него отправка заблокирована (ТЗ, раздел 8).</li><li>Защита по ТЗ: скрытое поле-ловушка, проверка времени заполнения на сервере, невидимая Яндекс SmartCaptcha.</li><li>График — пн–сб 11:00–19:00, от КДМ (29.10). Номер WhatsApp отличается от основного телефона — подтвердить.</li><li>Админка: телефоны, адрес, график, ссылки на мессенджеры и соцсети.</li></ul></aside>
   </div>
 </section>
 
@@ -896,7 +835,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <a href="https://t.me/dommebeli41" target="_blank" rel="noopener">Telegram</a>
     </div>
   </div>
-  <div class="container"><aside class="note"><span class="note-label">Пояснение · 12 Подвал</span><p class="tz"><b>По ТЗ — всё есть:</b> соцсети, реквизиты, политика конфиденциальности и согласия на каждой странице, cookie-баннер (ТЗ, раздел 8).</p>Реквизиты — ООО, от КДМ (29.10); такие же стоят в политике. Не хватает юридического адреса.</aside></div>
 </footer>
 
 <!-- Мобильная полоса -->
@@ -932,7 +870,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <a href="#contacts" data-close>Контакты</a>
     </nav>
     <hr class="separator">
-    <div class="row" data-ok="29.10" data-why="Телефон и «Написать» в меню — наша доработка: связаться можно из любого места страницы, не листая до контактов.">
+    <div class="row">
       <a class="btn btn-outline" href="tel:+79245858263">+7 (924) 585-82-63</a>
       <button class="btn btn-outline" data-open="messengers">Написать</button>
     </div>
@@ -948,7 +886,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <a class="btn btn-outline btn-lg btn-block" href="https://t.me/dommebeli41" target="_blank" rel="noopener">Telegram</a>
     <a class="btn btn-outline btn-lg btn-block" href="#" onclick="return false">MAX</a>
     <a class="btn btn-outline btn-lg btn-block" href="https://vk.com/dommebeli41" target="_blank" rel="noopener">ВКонтакте</a>
-    <p class="hint" style="text-align:center"><span data-src="Текущий сайт: «Менеджер перезвонит в течение 10 минут». Подтвердить, что в мессенджерах отвечают так же быстро.">Отвечаем в рабочее время в течение 10 минут</span></p>
+    <p class="hint" style="text-align:center">Отвечаем в рабочее время в течение 10 минут</p>
   </div>
 </dialog>
 
@@ -961,7 +899,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <p class="params" style="margin-top:8px"><span>S = 00 м²</span><span>00 дней</span><span>от 000 000 ₽</span></p>
       <p class="small muted" style="margin-top:4px">Дизайнер: <span id="pDesigner"></span></p>
     </div>
-    <div class="stack" data-ok="28.10" data-why="В ТЗ — «было и стало». На созвоне 28.10 решили заменить: фото «было» у КДМ обычно нет, а 3D-рендер есть всегда. Пара «рендер → готовая кухня» показывает, что получается как на проекте.">
+    <div class="stack">
       <p class="label">3D-проект → готовая кухня</p>
       <div class="ba" id="ba">
         <div class="ph" data-ba-a>РЕНДЕР · 3D-проект</div>
@@ -974,15 +912,14 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <div><h4>Что хотели</h4><div class="ph-text">[1–2 предложения: задача и пожелания]</div></div>
     <div><h4>Какие были сложности</h4><div class="ph-text">[1–2 предложения: трубы, ниша, сроки, бюджет — и как решили]</div></div>
     <div><h4>Что получилось</h4><div class="ph-text">[1–2 предложения: итог, срок, что понравилось клиенту]</div></div>
-    <div class="carousel" id="pCarousel" data-total="5" data-i="1" data-label="ФОТО ПРОЕКТА" data-ok="28.10" data-why="Решили на созвоне 28.10: фото проекта — каруселью со стрелками внутри попапа, чтобы попап не был длинным.">
+    <div class="carousel" id="pCarousel" data-total="5" data-i="1" data-label="ФОТО ПРОЕКТА">
       <div class="ph" style="aspect-ratio:16/9" data-car-view>ФОТО ПРОЕКТА · 1 из 5</div>
       <button class="btn btn-outline btn-icon car-btn car-prev" type="button" data-car="-1" aria-label="Предыдущее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
       <button class="btn btn-outline btn-icon car-btn car-next" type="button" data-car="1" aria-label="Следующее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
-    <aside class="note"><span class="note-label">Пояснение · попап проекта</span>История по ТЗ: кто пришёл, что хотел, какие были сложности, что получилось, кнопка «Хочу такую же». Каждая часть — до 250 знаков, пишет КДМ по шаблону. «Было и стало» по решению КДМ заменили на «3D-проект → готовая кухня». «Хочу такую же» ведёт в квиз, тип кухни уже выбран.</aside>
   </div>
   <div class="dlg-foot">
-    <button class="btn btn-outline" data-open="lead" id="pDesignerBtn" data-topic="" data-ok="28.10" data-why="Кнопка по ТЗ — «Хочу такую же», она главная. Вторая — для тех, кому понравился подход дизайнера, а не конкретная кухня: ведёт в ту же запись, что и блок «Дизайнеры».">Записаться к дизайнеру</button>
+    <button class="btn btn-outline" data-open="lead" id="pDesignerBtn" data-topic="">Записаться к дизайнеру</button>
     <div class="right"><button class="btn btn-primary" id="pWant">Хочу такую же</button></div>
   </div>
 </dialog>
@@ -1007,7 +944,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <div class="ph" style="aspect-ratio:16/9">ФОТО · иллюстрация к совету</div>
     <div class="ph-text">[Текст от КДМ · 3–5 предложений, до 600 знаков: конкретный совет или контакт мастера]</div>
   </div>
-  <div class="dlg-foot"><span class="hint">Нужен совет по вашему ремонту?</span><div class="right"><button class="btn btn-outline" data-open="lead" data-topic="Консультация по плану ремонта и замерам" data-why="Тот же призыв, что под блоком (ТЗ), но в момент, когда человек дочитал совет и вопрос у него свежий.">Подскажем по плану ремонта</button></div></div>
+  <div class="dlg-foot"><span class="hint">Нужен совет по вашему ремонту?</span><div class="right"><button class="btn btn-outline" data-open="lead" data-topic="Консультация по плану ремонта и замерам">Подскажем по плану ремонта</button></div></div>
 </dialog>
 
 <!-- ДИАЛОГ: заявка (замер, дизайнер, консультация) -->
@@ -1018,7 +955,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
       <div class="field"><label class="label" for="lName">Имя</label><input class="input" id="lName" name="name" autocomplete="given-name"></div>
       <div class="field"><label class="label" for="lPhone">Телефон</label><input class="input" id="lPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><p class="error">Проверьте номер: после +7 нужно 10 цифр</p></div>
       <div class="field"><span class="label">Как с вами связаться</span>
-        <div class="chips" data-ok="28.10" data-why="Выбор способа связи — по ТЗ. Наше — что по умолчанию выбран WhatsApp, а не звонок: около половины заявок сейчас заканчиваются недозвоном (ТЗ)." data-method role="group" aria-label="Способ связи">
+        <div class="chips" data-method role="group" aria-label="Способ связи">
           <button type="button" class="chip" aria-pressed="false" data-v="Позвонить">Позвонить</button>
           <button type="button" class="chip" aria-pressed="true" data-v="WhatsApp">WhatsApp</button>
           <button type="button" class="chip" aria-pressed="false" data-v="Telegram">Telegram</button>
@@ -1033,7 +970,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <div class="success" aria-live="polite">
       <span class="ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
       <h3>Заявка у нас</h3>
-      <p class="muted" data-success-text data-ok="28.10" data-why="Экран после отправки — наша доработка. Текст зависит от способа связи и камчатского времени: ночью обещаем ответ утром, а не «через 10 минут». 10 минут — с текущего сайта, график даст КДМ."></p>
+      <p class="muted" data-success-text></p>
       <button class="btn btn-outline" data-close>Вернуться на сайт</button>
     </div>
   </div>
@@ -1047,35 +984,6 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
     set(k, v){ try { localStorage.setItem(k, v); } catch(e){} }
   };
-
-  /* Пояснения */
-  const sw = $('#notesSwitch');
-  function setNotes(on){ document.documentElement.classList.toggle('notes-off', !on); sw.setAttribute('aria-checked', String(on)); store.set('kdm-notes', on ? 'on' : 'off'); }
-  setNotes(store.get('kdm-notes') !== 'off');
-  sw.addEventListener('click', () => setNotes(sw.getAttribute('aria-checked') !== 'true'));
-
-  /* Отметки «не из ТЗ»: подсказка при наведении */
-  const ms = $('#marksSwitch'), tip = document.createElement('div');
-  tip.className = 'why-tip'; tip.setAttribute('role', 'tooltip');
-  let tipFor = null;
-  function hideTip(){ tip.classList.remove('show'); tipFor = null; }
-  function showTip(el){
-    if (document.documentElement.classList.contains('marks-off')) return;
-    const why = el.dataset.why, ok = el.dataset.ok;
-    tip.innerHTML = `<b>${why ? (ok ? 'Не из ТЗ · утвердили ' + ok : 'Наша доработка · не из ТЗ') : 'Факт не из ТЗ · откуда'}</b>`;
-    tip.append(why || el.dataset.src);
-    (el.closest('dialog[open]') || document.body).appendChild(tip);
-    const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
-    tip.style.left = Math.max(12, Math.min(r.left, innerWidth - w - 12)) + 'px';
-    tip.style.top = (r.bottom + 10 + h < innerHeight ? r.bottom + 10 : Math.max(12, r.top - h - 10)) + 'px';
-    tip.classList.add('show'); tipFor = el;
-  }
-  function setMarks(on){ document.documentElement.classList.toggle('marks-off', !on); ms.setAttribute('aria-checked', String(on)); store.set('kdm-marks', on ? 'on' : 'off'); if (!on) hideTip(); }
-  setMarks(store.get('kdm-marks') !== 'off');
-  ms.addEventListener('click', () => setMarks(ms.getAttribute('aria-checked') !== 'true'));
-  document.addEventListener('mouseover', e => { const el = e.target.closest('[data-why],[data-src]'); if (el && el !== tipFor) showTip(el); else if (!el && tipFor) hideTip(); });
-  document.addEventListener('focusin', e => { const el = e.target.closest('[data-why],[data-src]'); el ? showTip(el) : hideTip(); });
-  document.addEventListener('scroll', hideTip, { capture: true, passive: true });
 
   /* Cookie */
   const cookie = $('#cookie');
@@ -1112,8 +1020,8 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
     <div class="card designer">
       <div class="ph">ПОРТРЕТ · по пояс, общий фон</div>
       <h3>[Имя Фамилия]</h3>
-      <p class="ph-text" data-ok="28.10" data-why="В ТЗ три пункта: стиль, любимые проекты, как работает с референсом. На созвоне 28.10 КДМ решил свести их в одну короткую строку — дизайнеры работают в любом стиле.">[О дизайнере — 1–2 фразы, до 120 знаков]</p>
-      <div class="thumbs" data-ok="28.10" data-why="Решили на созвоне 28.10: проекты дизайнера открываются по клику только фотографиями — без перехода к портфолио и без текста.">${[1, 2, 3].map(k => `<button type="button" class="ph thumb" data-d="${i}" data-k="${k}" aria-label="Фото проекта ${k}">ПРОЕКТ ${k}</button>`).join('')}</div>
+      <p class="ph-text">[О дизайнере — 1–2 фразы, до 120 знаков]</p>
+      <div class="thumbs">${[1, 2, 3].map(k => `<button type="button" class="ph thumb" data-d="${i}" data-k="${k}" aria-label="Фото проекта ${k}">ПРОЕКТ ${k}</button>`).join('')}</div>
       <button class="btn btn-outline btn-block" data-open="lead" data-topic="Запись к дизайнеру: ${d}">Записаться в салон к этому дизайнеру</button>
     </div>`).join('');
 
@@ -1183,8 +1091,8 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
   }));
 
   /* Диалоги */
-  function openDlg(id){ const d = document.getElementById(id); if (!d) return; hideTip(); $$('dialog[open]').forEach(o => { if (o !== d) o.close(); }); if (!d.open) d.showModal(); }
-  $$('dialog').forEach(d => { d.addEventListener('click', e => { if (e.target === d) d.close(); }); d.addEventListener('close', hideTip); });
+  function openDlg(id){ const d = document.getElementById(id); if (!d) return; $$('dialog[open]').forEach(o => { if (o !== d) o.close(); }); if (!d.open) d.showModal(); }
+  $$('dialog').forEach(d => { d.addEventListener('click', e => { if (e.target === d) d.close(); }); });
   document.addEventListener('click', e => {
     const closeBtn = e.target.closest('[data-close]');
     if (closeBtn) { const d = closeBtn.closest('dialog'); if (d) d.close(); }
