@@ -208,7 +208,7 @@ p{margin:0}
 .quiz-head{display:grid;gap:8px;margin-bottom:20px}
 .quiz-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:22px;padding-top:16px;border-top:1px solid var(--border)}
 .quiz-foot .right{display:flex;gap:10px;margin-left:auto}
-@media(max-width:639px){.quiz-foot{flex-wrap:nowrap}.quiz-foot .btn{padding:0 14px}}
+@media(max-width:639px){.card.quiz{padding:20px 16px}.quiz-foot{flex-wrap:nowrap;gap:6px}.quiz-foot .right{gap:6px}.quiz-foot .btn{padding:0 12px;font-size:14px}}
 .gets li{display:flex;gap:12px;align-items:flex-start}
 .gets{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .gets .n{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--muted);font:500 12px var(--font-mono)}
@@ -292,7 +292,7 @@ dialog[open]{display:flex;flex-direction:column}
 .dlg-body{padding:20px;overflow:auto;flex:1}
 .dlg-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;padding:14px 20px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--border)}
 .dlg-foot .right{display:flex;gap:10px;margin-left:auto}
-@media(max-width:639px){.dlg-foot{flex-wrap:nowrap}.dlg-foot .btn{padding:0 14px}}
+@media(max-width:639px){.dlg-foot{flex-wrap:nowrap;gap:6px;padding-left:16px;padding-right:16px}.dlg-foot .btn{padding:0 12px;font-size:14px}}
 @media(max-width:639px){
   dialog.fullscreen-sm{width:100%;max-width:100%;height:100dvh;max-height:100dvh;margin:0;border-radius:0}
 }
@@ -551,7 +551,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
           </div>
           <!-- 4 -->
           <div class="q-step" data-step="4">
-            <span class="badge badge-secondary" style="justify-self:start">Место замера · можно пропустить</span>
+            <span class="badge badge-secondary" style="justify-self:start">Место замера</span>
             <p class="q-title">Где нужен замер?</p>
             <div class="stack" id="qPlace">
               <button class="option option-row" aria-pressed="false" data-v="Петропавловск-Камчатский">Петропавловск-Камчатский</button>
@@ -563,7 +563,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
           </div>
           <!-- 5 -->
           <div class="q-step" data-step="5">
-            <span class="badge badge-secondary" style="justify-self:start">Важно для вас · до двух вариантов, можно пропустить</span>
+            <span class="badge badge-secondary" style="justify-self:start">Важно для вас · можно выбрать до двух</span>
             <p class="q-title">Что для вас важнее всего в новой кухне?</p>
             <div class="stack" id="qImportant">
               <button class="option option-row" aria-pressed="false" data-v="Чтобы готовить было удобно и всё под рукой">Чтобы готовить было удобно и всё под рукой</button>
@@ -1160,7 +1160,7 @@ dialog.sheet{margin:auto auto 0;max-width:520px;width:100%;border-radius:calc(va
 
   function prepareLead(topic, title){
     const dlg = $('#lead');
-    $('#leadTitle').textContent = title || (topic.startsWith('Запись к дизайнеру') ? topic.replace('Запись к дизайнеру: ', 'Запись к дизайнеру ') : topic);
+    $('#leadTitle').textContent = title || topic;
     const form = $('form', dlg); form.dataset.topic = topic; form.hidden = false; form.reset();
     $('.success', dlg).classList.remove('show');
     $('button[type="submit"]', form).disabled = true;
